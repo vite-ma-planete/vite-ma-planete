@@ -1,0 +1,52 @@
+#######################################
+#            AI Access Rules          #
+#######################################
+- id: "api:create-chat-completions:anonymous"
+  upstream:
+    preserve_host: true
+    url: "http://api:3100"
+  match:
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/ai/chat/completions
+    methods:
+      - POST
+  authenticators:
+    - handler: cookie_session
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: id_token
+  errors:
+    - handler: redirect
+
+- id: "api:create-completions:anonymous"
+  upstream:
+    preserve_host: true
+    url: "http://api:3100"
+  match:
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/ai/completions
+    methods:
+      - POST
+  authenticators:
+    - handler: anonymous
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: noop
+
+- id: "api:create-completions-nostream:anonymous"
+  upstream:
+    preserve_host: true
+    url: "http://api:3100"
+  match:
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/ai/completions/no-stream
+    methods:
+      - POST
+  authenticators:
+    - handler: cookie_session
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: id_token
+  errors:
+    - handler: redirect
+    - handler: redirect
