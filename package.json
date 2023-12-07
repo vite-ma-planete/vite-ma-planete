@@ -65,6 +65,8 @@
     "nestjs-otel": "^5.1.5",
     "nestjs-pino": "^3.5.0",
     "next": "14.0.3",
+    "next-intl": "^3.3.1",
+    "openai": "^4.20.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "pino-http": "^8.5.1",

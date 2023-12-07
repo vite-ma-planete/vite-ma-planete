@@ -1,13 +1,13 @@
-import { Body, Controller, RequestMethod } from '@nestjs/common';
+import { Body, Controller, RequestMethod, Sse } from '@nestjs/common';
 import {
-  ChatCompletionDto,
-  CompletionDto,
   CreateChatCompletionDto,
   CreateCompletionDto,
 } from '@vite-ma-planete/types';
 import { ApiRouteAuthenticated } from '@vite-ma-planete/utils';
 import { AiService } from './ai.service';
 import { ApiTags } from '@nestjs/swagger';
+import { Observable } from 'rxjs';
+import { ChatCompletionChunk, Completion } from 'openai/resources';
 
 @ApiTags('AI')
 @Controller('ai')
@@ -19,16 +19,17 @@ export class AiController {
     path: '/chat/completions',
     operation: {
       summary: 'Chat with the AI',
-      description: 'Chat with the AI to get a response from a chat history',
+      description:
+        'Chat with the AI to get a response from a chat history. Streaming is mandatory.',
     },
     response: {
       status: 200,
-      type: ChatCompletionDto,
     },
   })
+  @Sse()
   createChatCompletions(
     @Body() body: CreateChatCompletionDto
-  ): Promise<ChatCompletionDto> {
+  ): Observable<ChatCompletionChunk> {
     return this.aiService.createChatCompletions(body);
   }
 
@@ -37,14 +38,14 @@ export class AiController {
     path: '/completions',
     operation: {
       summary: 'Get a completion',
-      description: 'Get a completion from a prompt',
+      description: 'Get a completion from a prompt. Streaming is mandatory.',
     },
     response: {
       status: 200,
-      type: CompletionDto,
     },
   })
-  createCompletions(@Body() body: CreateCompletionDto): Promise<CompletionDto> {
+  @Sse()
+  createCompletions(@Body() body: CreateCompletionDto): Observable<Completion> {
     return this.aiService.createCompletions(body);
   }
 }
