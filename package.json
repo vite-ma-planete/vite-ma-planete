@@ -56,6 +56,7 @@
     "nestjs-otel": "^5.1.5",
     "nestjs-pino": "^3.5.0",
     "next": "14.0.3",
+    "next-intl": "^3.3.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "pino-http": "^8.5.1",
@@ -70,6 +71,8 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
     "@nestjs/schematics": "^10.0.3",
     "@nestjs/testing": "^10.2.10",
     "@nx/cypress": "17.1.3",

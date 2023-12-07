@@ -16,24 +16,13 @@
     "baseUrl": ".",
     "paths": {
       "@vite-ma-planete/auth": ["packages/auth/src/index.ts"],
-      "@vite-ma-planete/config": [
-        "packages/config/src/index.ts"
-      ],
-      "@vite-ma-planete/database": [
-        "packages/database/src/index.ts"
-      ],
-      "@vite-ma-planete/error": [
-        "packages/error/src/index.ts"
-      ],
-      "@vite-ma-planete/notes": [
-        "packages/notes/src/index.ts"
-      ],
-      "@vite-ma-planete/opentelemetry": [
-        "packages/opentelemetry/src/index.ts"
-      ],
-      "@vite-ma-planete/types": [
-        "packages/types/src/index.ts"
-      ],
+      "@vite-ma-planete/config": ["packages/config/src/index.ts"],
+      "@vite-ma-planete/database": ["packages/database/src/index.ts"],
+      "@vite-ma-planete/error": ["packages/error/src/index.ts"],
+      "@vite-ma-planete/notes": ["packages/notes/src/index.ts"],
+      "@vite-ma-planete/opentelemetry": ["packages/opentelemetry/src/index.ts"],
+      "@vite-ma-planete/types": ["packages/types/src/index.ts"],
+      "@vite-ma-planete/ui": ["packages/ui/src/index.ts"],
       "@vite-ma-planete/utils": ["packages/utils/src/index.ts"]
     }
   },
