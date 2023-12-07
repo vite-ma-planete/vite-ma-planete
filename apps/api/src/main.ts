@@ -1,8 +1,5 @@
 // Otel must be imported before any other modules
-import {
-  otelEnabled,
-  otelSDK,
-} from '@vite-ma-planete/opentelemetry';
+import { otelEnabled, otelSDK } from '@vite-ma-planete/opentelemetry';
 
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
@@ -20,6 +17,8 @@ import { ResponseFormatterInterceptor } from '@vite-ma-planete/utils';
 import { Logger } from 'nestjs-pino';
 import helmet from '@fastify/helmet';
 import csrf from '@fastify/csrf-protection';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 async function bootstrap() {
   if (otelEnabled) {
@@ -42,8 +41,10 @@ async function bootstrap() {
 
   // Security plugins
   app.enableCors();
-  await app.register(helmet);
-  await app.register(csrf);
+  if (isProd) {
+    await app.register(helmet);
+    await app.register(csrf);
+  }
 
   // Validation pipe
   app.useGlobalPipes(
@@ -62,9 +63,6 @@ async function bootstrap() {
     new ExceptionsFilter(httpAdapter),
     new PrismaClientExceptionFilter(httpAdapter)
   );
-
-  // Response formatter interceptor
-  app.useGlobalInterceptors(new ResponseFormatterInterceptor());
 
   app.enableShutdownHooks();
 
