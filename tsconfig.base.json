@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-next-nest-prisma-ory-template/auth": ["packages/auth/src/index.ts"],
+      "@nx-next-nest-prisma-ory-template/config": [
+        "packages/config/src/index.ts"
+      ],
+      "@nx-next-nest-prisma-ory-template/database": [
+        "packages/database/src/index.ts"
+      ],
+      "@nx-next-nest-prisma-ory-template/error": [
+        "packages/error/src/index.ts"
+      ],
+      "@nx-next-nest-prisma-ory-template/notes": [
+        "packages/notes/src/index.ts"
+      ],
+      "@nx-next-nest-prisma-ory-template/opentelemetry": [
+        "packages/opentelemetry/src/index.ts"
+      ],
+      "@nx-next-nest-prisma-ory-template/types": [
+        "packages/types/src/index.ts"
+      ],
+      "@nx-next-nest-prisma-ory-template/utils": ["packages/utils/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
