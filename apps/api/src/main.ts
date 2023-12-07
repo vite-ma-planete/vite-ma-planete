@@ -2,7 +2,7 @@
 import {
   otelEnabled,
   otelSDK,
-} from '@nx-next-nest-prisma-ory-template/opentelemetry';
+} from '@vite-ma-planete/opentelemetry';
 
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
@@ -14,9 +14,9 @@ import { AppModule } from './app/app.module';
 import {
   ExceptionsFilter,
   PrismaClientExceptionFilter,
-} from '@nx-next-nest-prisma-ory-template/error';
+} from '@vite-ma-planete/error';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ResponseFormatterInterceptor } from '@nx-next-nest-prisma-ory-template/utils';
+import { ResponseFormatterInterceptor } from '@vite-ma-planete/utils';
 import { Logger } from 'nestjs-pino';
 import helmet from '@fastify/helmet';
 import csrf from '@fastify/csrf-protection';
@@ -69,7 +69,7 @@ async function bootstrap() {
   app.enableShutdownHooks();
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('nx-next-nest-prisma-ory-template API')
+    .setTitle('vite-ma-planete API')
     .setDescription('Your NX template to provide a Seamless Experience.')
     .setVersion('0.1')
     .build();

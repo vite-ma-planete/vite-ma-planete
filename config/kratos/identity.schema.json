@@ -1,5 +1,5 @@
 {
-  "$id": "https://dev.nx-next-nest-prisma-ory-template.com/config/kratos/identity.schema.json",
+  "$id": "https://dev.vite-ma-planete.com/config/kratos/identity.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "User",
   "type": "object",

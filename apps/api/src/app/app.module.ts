@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AuthModule } from '@nx-next-nest-prisma-ory-template/auth';
-import { DatabaseModule } from '@nx-next-nest-prisma-ory-template/database';
-import { NotesModule } from '@nx-next-nest-prisma-ory-template/notes';
-import { OpenTelemetryModule } from '@nx-next-nest-prisma-ory-template/opentelemetry';
+import { AuthModule } from '@vite-ma-planete/auth';
+import { DatabaseModule } from '@vite-ma-planete/database';
+import { NotesModule } from '@vite-ma-planete/notes';
+import { OpenTelemetryModule } from '@vite-ma-planete/opentelemetry';
 
 @Module({
   imports: [

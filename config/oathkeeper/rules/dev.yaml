@@ -6,7 +6,7 @@
     preserve_host: true
     url: "http://mailslurper:4436"
   match:
-    url: "http://mail.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/<.*>"
+    url: "http://mail.dev.vite-ma-planete.127.0.0.1.sslip.io/<.*>"
     methods:
       - GET
       - POST
@@ -25,7 +25,7 @@
     preserve_host: true
     url: "http://127.0.0.1:4456"
   match:
-    url: "http://oathkeeper.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/.well-known/jwks.json"
+    url: "http://oathkeeper.dev.vite-ma-planete.127.0.0.1.sslip.io/.well-known/jwks.json"
     methods:
       - GET
   authenticators:
@@ -41,7 +41,7 @@
     url: "http://keto:4466"
     strip_path: /read
   match:
-    url: "http://keto.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/read/<.*>"
+    url: "http://keto.dev.vite-ma-planete.127.0.0.1.sslip.io/read/<.*>"
     methods:
       - GET
       - POST
@@ -61,7 +61,7 @@
     url: "http://keto:4467"
     strip_path: /write
   match:
-    url: "http://keto.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/write/<.*>"
+    url: "http://keto.dev.vite-ma-planete.127.0.0.1.sslip.io/write/<.*>"
     methods:
       - GET
       - POST
@@ -80,7 +80,7 @@
     preserve_host: true
     url: "http://jaeger:16686"
   match:
-    url: "http://jaeger.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/<.*>"
+    url: "http://jaeger.dev.vite-ma-planete.127.0.0.1.sslip.io/<.*>"
     methods:
       - GET
       - POST
@@ -99,7 +99,7 @@
     preserve_host: true
     url: "http://jaeger:14268"
   match:
-    url: "http://push.jaeger.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/<.*>"
+    url: "http://push.jaeger.dev.vite-ma-planete.127.0.0.1.sslip.io/<.*>"
     methods:
       - GET
       - POST
@@ -118,7 +118,7 @@
     preserve_host: true
     url: "http://http-dump:3000"
   match:
-    url: "http://http-dump.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/anonymous"
+    url: "http://http-dump.dev.vite-ma-planete.127.0.0.1.sslip.io/anonymous"
     methods:
       - GET
   authenticators:
@@ -133,7 +133,7 @@
     preserve_host: true
     url: "http://http-dump:3000"
   match:
-    url: "http://http-dump.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/protected"
+    url: "http://http-dump.dev.vite-ma-planete.127.0.0.1.sslip.io/protected"
     methods:
       - GET
   authenticators:
@@ -150,7 +150,7 @@
     preserve_host: true
     url: "http://api:3100"
   match:
-    url: "http://api.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/swagger/<.*>"
+    url: "http://api.vite-ma-planete.127.0.0.1.sslip.io/swagger/<.*>"
     methods:
       - GET
       - POST

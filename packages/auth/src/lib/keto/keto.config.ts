@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import * as Joi from 'joi';
-import { JoiUtil } from '@nx-next-nest-prisma-ory-template/config';
+import { JoiUtil } from '@vite-ma-planete/config';
 
 export interface DatabaseConfig {
   readUrl: string;
@@ -16,7 +16,7 @@ export const config = registerAs('keto', () =>
           scheme: ['https', 'http'],
         })
         .default(
-          'http://keto.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/read'
+          'http://keto.dev.vite-ma-planete.127.0.0.1.sslip.io/read'
         ),
     },
     writeUrl: {
@@ -26,7 +26,7 @@ export const config = registerAs('keto', () =>
           scheme: ['https', 'http'],
         })
         .default(
-          'http://keto.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/write'
+          'http://keto.dev.vite-ma-planete.127.0.0.1.sslip.io/write'
         ),
     },
   })

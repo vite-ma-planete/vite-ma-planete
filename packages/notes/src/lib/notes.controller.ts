@@ -7,7 +7,7 @@ import {
   RequestMethod,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { ApiRouteAuthenticated } from '@nx-next-nest-prisma-ory-template/utils';
+import { ApiRouteAuthenticated } from '@vite-ma-planete/utils';
 import { NotesService } from './notes.service';
 import { FastifyRequest } from 'fastify';
 import {
@@ -15,7 +15,7 @@ import {
   Note,
   NoteDto,
   UpdateNoteDto,
-} from '@nx-next-nest-prisma-ory-template/types';
+} from '@vite-ma-planete/types';
 
 @ApiTags('Notes')
 @Controller('notes')

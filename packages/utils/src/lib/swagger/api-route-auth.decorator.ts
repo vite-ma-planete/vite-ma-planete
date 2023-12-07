@@ -5,7 +5,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { ApiRoute, ApiRouteOptions } from './api-route.decorator';
-import { JwtAuthGuard } from '@nx-next-nest-prisma-ory-template/auth';
+import { JwtAuthGuard } from '@vite-ma-planete/auth';
 
 export const ApiRouteAuthenticated = (options: ApiRouteOptions) =>
   applyDecorators(

@@ -2,14 +2,14 @@ import { Injectable } from '@nestjs/common';
 import {
   Transaction,
   TransactionStep,
-} from '@nx-next-nest-prisma-ory-template/utils';
-import { KetoService } from '@nx-next-nest-prisma-ory-template/auth';
-import { PrismaService } from '@nx-next-nest-prisma-ory-template/database';
+} from '@vite-ma-planete/utils';
+import { KetoService } from '@vite-ma-planete/auth';
+import { PrismaService } from '@vite-ma-planete/database';
 import {
   CreateNoteDto,
   Note,
   UpdateNoteDto,
-} from '@nx-next-nest-prisma-ory-template/types';
+} from '@vite-ma-planete/types';
 
 @Injectable()
 export class NotesService {

@@ -30,7 +30,7 @@ services:
     labels:
       - 'traefik.enable=true'
       - 'traefik.http.services.dev-oathkeeper.loadbalancer.server.port=4455'
-      - 'traefik.http.routers.dev-oathkeeper.rule=HostRegexp(`nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io`, `{subdomain:[a-z-_.]+}.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io`)'
+      - 'traefik.http.routers.dev-oathkeeper.rule=HostRegexp(`vite-ma-planete.127.0.0.1.sslip.io`, `{subdomain:[a-z-_.]+}.vite-ma-planete.127.0.0.1.sslip.io`)'
       - 'traefik.http.routers.dev-oathkeeper.entrypoints=web'
     environment:
       - LOG_LEVEL=debug
@@ -57,7 +57,7 @@ services:
     container_name: dev-kratos-selfservice-ui-node
     environment:
       - KRATOS_PUBLIC_URL=http://kratos:4433/
-      - KRATOS_BROWSER_URL=http://identity.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/kratos/
+      - KRATOS_BROWSER_URL=http://identity.vite-ma-planete.127.0.0.1.sslip.io/kratos/
 
   # acl and rbac management
   keto:

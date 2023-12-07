@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import * as Joi from 'joi';
-import { JoiUtil } from '@nx-next-nest-prisma-ory-template/config';
+import { JoiUtil } from '@vite-ma-planete/config';
 
 export interface OpenTelemetryConfig {
   enabled: boolean;

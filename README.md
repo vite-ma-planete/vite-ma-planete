@@ -1,4 +1,4 @@
-# nx-next-nest-prisma-ory-template
+# vite-ma-planete
 
 ## Overview
 

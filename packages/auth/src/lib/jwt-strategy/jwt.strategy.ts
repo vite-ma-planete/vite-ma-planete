@@ -3,7 +3,7 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
 import { passportJwtSecret } from 'jwks-rsa';
 import { ConfigService } from '@nestjs/config';
-import { IdToken } from '@nx-next-nest-prisma-ory-template/types';
+import { IdToken } from '@vite-ma-planete/types';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import fastify from 'fastify';

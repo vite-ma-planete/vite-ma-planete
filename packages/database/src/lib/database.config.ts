@@ -1,5 +1,5 @@
 import { registerAs } from '@nestjs/config';
-import { JoiUtil } from '@nx-next-nest-prisma-ory-template/config';
+import { JoiUtil } from '@vite-ma-planete/config';
 import * as Joi from 'joi';
 
 export interface DatabaseConfig {

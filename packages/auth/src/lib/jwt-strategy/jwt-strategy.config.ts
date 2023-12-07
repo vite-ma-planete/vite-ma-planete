@@ -1,6 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import * as Joi from 'joi';
-import { JoiUtil } from '@nx-next-nest-prisma-ory-template/config';
+import { JoiUtil } from '@vite-ma-planete/config';
 
 export interface JwtConfig {
   jwksUri: string;
@@ -16,7 +16,7 @@ export const config = registerAs('jwt', () => {
           scheme: ['https', 'http'],
         })
         .default(
-          'http://oathkeeper.dev.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/.well-known/jwks.json'
+          'http://oathkeeper.dev.vite-ma-planete.127.0.0.1.sslip.io/.well-known/jwks.json'
         ),
     },
     issuer: {
@@ -25,7 +25,7 @@ export const config = registerAs('jwt', () => {
         .uri({
           scheme: ['https', 'http'],
         })
-        .default('http://oathkeeper.nx-next-nest-prisma-ory-template.internal'),
+        .default('http://oathkeeper.vite-ma-planete.internal'),
     },
   });
 

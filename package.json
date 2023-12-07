@@ -1,5 +1,5 @@
 {
-  "name": "@nx-next-nest-prisma-ory-template/source",
+  "name": "@vite-ma-planete/source",
   "version": "0.0.0",
   "scripts": {
     "build": "nx run-many --target=build --all=true",

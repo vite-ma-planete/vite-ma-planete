@@ -4,16 +4,16 @@ dsn: memory
 
 serve:
   public:
-    base_url: http://identity.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/kratos/
+    base_url: http://identity.vite-ma-planete.127.0.0.1.sslip.io/kratos/
     cors:
       enabled: true
   admin:
     base_url: http://kratos:4434/
 
 selfservice:
-  default_browser_return_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/
+  default_browser_return_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/
   allowed_return_urls:
-    - http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/
+    - http://auth.vite-ma-planete.127.0.0.1.sslip.io/
 
   methods:
     password:
@@ -31,36 +31,36 @@ selfservice:
 
   flows:
     error:
-      ui_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/error
+      ui_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/error
 
     settings:
-      ui_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/settings
+      ui_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/settings
       privileged_session_max_age: 15m
       required_aal: highest_available
 
     recovery:
       enabled: true
-      ui_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/recovery
+      ui_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/recovery
       use: code
 
     verification:
       enabled: true
-      ui_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/verification
+      ui_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/verification
       use: code
       after:
-        default_browser_return_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/
+        default_browser_return_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/
 
     logout:
       after:
-        default_browser_return_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/login
+        default_browser_return_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/login
 
     login:
-      ui_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/login
+      ui_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/login
       lifespan: 10m
 
     registration:
       lifespan: 10m
-      ui_url: http://auth.nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io/registration
+      ui_url: http://auth.vite-ma-planete.127.0.0.1.sslip.io/registration
       after:
         password:
           hooks:
@@ -88,7 +88,7 @@ secrets:
     - 32-LONG-SECRET-NOT-SECURE-AT-ALL
 
 cookies:
-  domain: nx-next-nest-prisma-ory-template.127.0.0.1.sslip.io
+  domain: vite-ma-planete.127.0.0.1.sslip.io
   same_site: Lax
 
 ciphers:

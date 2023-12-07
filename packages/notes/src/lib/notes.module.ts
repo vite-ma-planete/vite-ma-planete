@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from '@nx-next-nest-prisma-ory-template/auth';
-import { DatabaseModule } from '@nx-next-nest-prisma-ory-template/database';
+import { AuthModule } from '@vite-ma-planete/auth';
+import { DatabaseModule } from '@vite-ma-planete/database';
 import { NotesController } from './notes.controller';
 import { NotesService } from './notes.service';
 

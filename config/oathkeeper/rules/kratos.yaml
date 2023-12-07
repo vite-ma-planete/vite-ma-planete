@@ -7,7 +7,7 @@
     url: "http://kratos:4433"
     strip_path: /kratos
   match:
-    url: http://identity.nx-next-nest-prisma-ory-template.<127\.0\.0\.1\.sslip\.io|com>/kratos/<.*>
+    url: http://identity.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/kratos/<.*>
     methods:
       - GET
       - POST
