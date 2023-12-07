@@ -3,7 +3,7 @@ import {
   CreateChatCompletionDto,
   CreateCompletionDto,
 } from '@vite-ma-planete/types';
-import { ApiRouteAuthenticated } from '@vite-ma-planete/utils';
+import { ApiRoute } from '@vite-ma-planete/utils';
 import { AiService } from './ai.service';
 import { ApiTags } from '@nestjs/swagger';
 import { Observable } from 'rxjs';
@@ -18,7 +18,7 @@ import {
 export class AiController {
   constructor(private aiService: AiService) {}
 
-  @ApiRouteAuthenticated({
+  @ApiRoute({
     method: RequestMethod.POST,
     path: '/chat/completions/no-stream',
     operation: {
@@ -55,7 +55,7 @@ export class AiController {
     return this.aiService.createChatCompletions(body);
   }
 
-  @ApiRouteAuthenticated({
+  @ApiRoute({
     method: RequestMethod.POST,
     path: '/completions',
     operation: {
