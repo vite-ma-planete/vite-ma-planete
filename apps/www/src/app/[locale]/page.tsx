@@ -1,6 +1,5 @@
-import { useTranslations } from 'next-intl';
+import Loader from 'packages/ui/src/lib/Loader';
 
 export default function Index() {
-  const t = useTranslations();
-  return <h1>{t('title')}</h1>;
+  return <Loader />;
 }
