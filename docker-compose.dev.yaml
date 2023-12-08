@@ -35,6 +35,7 @@ services:
     environment:
       - LOG_LEVEL=debug
     volumes:
+      - ./config/oathkeeper/id_token.jwks.json:/etc/config/oathkeeper/id_token.jwks.json
       - ./config/oathkeeper/rules/dev.yaml:/etc/config/oathkeeper/rules/dev.yaml
 
   # user federation

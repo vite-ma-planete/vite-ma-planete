@@ -7,7 +7,7 @@
     url: "http://kratos:4433"
     strip_path: /kratos
   match:
-    url: http://identity.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/kratos/<.*>
+    url: http://identity.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|fr>/kratos/<.*>
     methods:
       - GET
       - POST
