@@ -6,7 +6,7 @@ import { Button, Stack, TextField, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import ChatbotMessage from './ChatbotMessage';
-import { useTranslation } from '@vite-ma-planete/i18n';
+import { useTranslation } from 'packages/i18n/src/lib/i18n';
 import { useDebounce } from 'usehooks-ts';
 
 export default function Chatbot() {
@@ -36,7 +36,7 @@ export default function Chatbot() {
         stream: false,
         model: 'davinci',
       })
-      .then((res) => {
+      .then((res: any) => {
         setSuggestion(debouncedPrompt + res.data.choices[0].text);
       });
   }, [debouncedPrompt]);

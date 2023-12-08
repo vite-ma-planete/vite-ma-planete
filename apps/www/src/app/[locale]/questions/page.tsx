@@ -2,12 +2,12 @@
 import { Container } from '@mui/material';
 import QuestionAccordion from 'packages/ui/src/lib/QuestionAccordion';
 import Trad from 'packages/i18n/src/lib/translations/en.json';
-import { useTranslation } from '@vite-ma-planete/i18n';
+import { useTranslation } from 'packages/i18n/src/lib/i18n';
 
 export default function Questions() {
   const { i18n } = useTranslation();
 
-  const themes = Trad.themes;
+  const themes = Trad.themes as any;
   return (
     <>
       {Object.keys(themes).map((themeId: string) => (

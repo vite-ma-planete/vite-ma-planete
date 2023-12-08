@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 
 import logo from './images/logo.webp';
-import { useTranslation } from '@vite-ma-planete/i18n';
+import { useTranslation } from 'packages/i18n/src/lib/i18n';
 
 function HeaderLink({
   href,

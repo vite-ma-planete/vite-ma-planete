@@ -3,7 +3,7 @@ import { Container, Grid, Paper, Stack, Typography } from '@mui/material';
 import QuestionAnswerRoundedIcon from '@mui/icons-material/QuestionAnswerRounded';
 import Groups2RoundedIcon from '@mui/icons-material/Groups2Rounded';
 import SmartToyRoundedIcon from '@mui/icons-material/SmartToyRounded';
-import { useTranslation } from '@vite-ma-planete/i18n';
+import { useTranslation } from 'packages/i18n/src/lib/i18n';
 import Link from 'next/link';
 
 export default function Home() {
