@@ -1,4 +1,11 @@
-import { IsNotEmpty, IsString, Length, ValidateNested } from 'class-validator';
+import {
+  IsBoolean,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  Length,
+  ValidateNested,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 import { ApiProperty, getSchemaPath } from '@nestjs/swagger';
 
@@ -50,4 +57,12 @@ export class CreateChatCompletionDto {
   @ValidateNested({ each: true })
   @Type(() => Message)
   messages: Message[];
+
+  @ApiProperty({
+    description: `Wether or not to stream the response`,
+    example: false,
+  })
+  @IsBoolean()
+  @IsOptional()
+  stream?: boolean;
 }

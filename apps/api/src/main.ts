@@ -39,9 +39,9 @@ async function bootstrap() {
 
   const httpAdapter = app.getHttpAdapter();
 
+  app.enableCors();
   if (isProd) {
     // Security plugins
-    app.enableCors();
     await app.register(helmet);
     await app.register(csrf);
   }

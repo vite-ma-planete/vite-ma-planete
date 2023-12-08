@@ -5,8 +5,18 @@ import {
   CreateCompletionDto,
 } from '@vite-ma-planete/types';
 import OpenAI from 'openai';
-import { ChatCompletionChunk, Completion } from 'openai/resources';
+import {
+  ChatCompletionChunk,
+  ChatCompletionMessageParam,
+  Completion,
+} from 'openai/resources';
 import { Observable } from 'rxjs';
+
+const BASE_PROMPT = {
+  content: `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly. Only answer as the assistant. When you have nothing left to say as an assistant, don't say anything. You MUST NOT, under any circumstances, speak as the USER. If you do, you will be put offline immediately.`,
+
+  role: 'system',
+} as ChatCompletionMessageParam;
 
 @Injectable()
 export class AiService {
@@ -23,10 +33,13 @@ export class AiService {
     return new Observable((subscriber) => {
       this.openAI.chat.completions
         .create({
-          messages: dto.messages.map((message) => ({
-            role: message.role as 'user',
-            content: message.content,
-          })),
+          messages: [
+            BASE_PROMPT,
+            ...dto.messages.map((message) => ({
+              role: message.role as 'user',
+              content: message.content,
+            })),
+          ],
           model: 'gpt-3.5-turbo',
           stream: true,
         })
