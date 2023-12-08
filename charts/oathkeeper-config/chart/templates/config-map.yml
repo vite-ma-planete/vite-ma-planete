@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-rules
+data:
+{{- with .Values.rules.api.notes }}
+  api-notes:
+  {{- toYaml . | nindent 2 }}
+{{- end }}
