@@ -1,0 +1,102 @@
+applications:
+  - name: api
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/vite-ma-planete/vite-ma-planete.git
+      targetRevision: add-helm-charts
+      path: apps/api/helm
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: vite-ma-planete
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+        - CreateNamespace=true
+
+  - name: www
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/vite-ma-planete/vite-ma-planete.git
+      targetRevision: add-helm-charts
+      path: apps/www/helm
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: vite-ma-planete
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+        - CreateNamespace=true
+
+  - name: oathkeeper
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/ory/k8s.git
+      targetRevision: HEAD
+      path: helm/charts/oathkeeper
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: vite-ma-planete
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+        - CreateNamespace=true
+
+  - name: kratos
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/ory/k8s.git
+      targetRevision: HEAD
+      path: helm/charts/kratos
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: vite-ma-planete
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+        - CreateNamespace=true
+
+  - name: kratos-selfservice-ui-node
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/ory/k8s.git
+      targetRevision: HEAD
+      path: helm/charts/kratos-selfservice-ui-node
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: vite-ma-planete
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+        - CreateNamespace=true
+
+  - name: keto
+    namespace: argocd
+    project: default
+    source:
+      repoURL: https://github.com/ory/k8s.git
+      targetRevision: HEAD
+      path: helm/charts/keto
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: vite-ma-planete
+    syncPolicy:
+      automated:
+        prune: false
+        selfHeal: false
+      syncOptions:
+        - CreateNamespace=true

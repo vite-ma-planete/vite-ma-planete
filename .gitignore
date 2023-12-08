@@ -214,3 +214,10 @@ TAGS
 
 # nx
 .nx
+
+# terraform
+.terraform
+terraform.tfvars
+
+# helm
+secrets.yaml
