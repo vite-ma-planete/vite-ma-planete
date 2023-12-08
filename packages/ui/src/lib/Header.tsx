@@ -55,22 +55,22 @@ export default function Header() {
             <Image src={logo} alt="Logo" height={40} />
             <Stack direction="row" spacing={2} alignItems="center">
               <HeaderLink
-                href="/"
+                href={`/${locale}`}
                 text={i18n.t('home')}
                 selected={pathname === '/'}
               />
               <HeaderLink
-                href="/charts"
+                href={`/${locale}/charts`}
                 text={i18n.t('charts')}
                 selected={pathname === '/charts'}
               />
               <HeaderLink
-                href="/questions"
+                href={`/${locale}/questions`}
                 text={i18n.t('questions')}
-                selected={pathname === 'questions'}
+                selected={pathname === '/questions'}
               />
               <HeaderLink
-                href="/associations"
+                href={`/${locale}/associations`}
                 text={i18n.t('associations')}
                 selected={pathname === '/associations'}
               />
