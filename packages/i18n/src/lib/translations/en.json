@@ -98,5 +98,32 @@
         }
       }
     }
+  },
+  "associationsList": {
+    "350.org": {
+      "name": "350.org",
+      "description": "350.org relies on online campaigns, local initiatives, and mass actions to oppose new coal, oil, and gas projects, divest companies contributing to global warming of their financial resources, and develop completely clean energy solutions that benefit everyone.",
+      "link": "https://350.org/"
+    },
+    "act_for_the_environment": {
+      "name": "Act for the Environment",
+      "description": "Act for the Environment initiates citizen mobilization campaigns with environmental protection and consumer associations, professional organizations, and unions on current topics (sustainable agriculture, transportation, energy, biodiversity protection, health, and the environment). It brings together expertise and proposals.",
+      "link": "https://www.agirpourlenvironnement.org/"
+    },
+    "alternatiba": {
+      "name": "Alternatiba",
+      "description": "Alternatiba is a citizen movement that aims to promote local alternatives to the climate crisis, notably through the organization of alternative villages in France and beyond. These are festive and popular events that highlight what can be done at various levels to address this major challenge of the 21st century! Alternatiba shows that not only do solutions to climate disruption exist, but they are also within our reach and build a more sustainable, just, solidarity-based, and friendly society.",
+      "link": "https://alternatiba.eu/"
+    },
+    "french_federation_of_bicycle_users": {
+      "name": "French Federation of Bicycle Users",
+      "description": "The FUB, which brings together French urban cyclist associations, encourages the use of bicycles as a means of daily transportation (documentary resources, study days, etc.) in urban areas in complementarity with public transportation.",
+      "link": "https://www.fub.fr/"
+    },
+    "student_network_for_an_ecological_and_solidarity_society": {
+      "name": "Student Network for an Ecological and Solidarity Society",
+      "description": "Since 2007, RESES has been a national network composed of 150 student associations that carry out projects related to socio-environmental issues such as food, biodiversity, climate, waste, etc. We advocate for an ambitious ecology vision that takes into account questions of social solidarity and equity.",
+      "link": "https://le-reses.org/"
+    }
   }
 }
