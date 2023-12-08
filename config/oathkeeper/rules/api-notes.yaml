@@ -6,7 +6,7 @@
     preserve_host: true
     url: "http://api:3100"
   match:
-    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/notes
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|fr>/notes
     methods:
       - POST
   authenticators:
@@ -23,7 +23,7 @@
     preserve_host: true
     url: "http://api:3100"
   match:
-    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/notes/<([0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})>
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|fr>/notes/<([0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})>
     methods:
       - GET
       - PATCH
@@ -50,7 +50,7 @@
     preserve_host: true
     url: "http://api:3100"
   match:
-    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/notes
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|fr>/notes
     methods:
       - GET
   authenticators:
