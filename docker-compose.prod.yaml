@@ -1,0 +1,60 @@
+version: '3.7'
+
+services:
+  # policy decision point
+  oathkeeper:
+    container_name: prod-oathkeeper
+    environment:
+      - LOG_LEVEL=debug
+      - ERRORS_HANDLERS_REDIRECT_CONFIG_TO=https://auth.vite-ma-planete.fr/login
+    volumes:
+      - ${JWKS_PATH}:/etc/config/oathkeeper/id_token.jwks.json
+
+  # user federation
+  kratos:
+    container_name: prod-kratos
+    environment:
+      - DSN=${DATABASE_URL}
+      - LOG_LEVEL=trace
+      - SERVE_PUBLIC_BASE_URL=https://identity.vite-ma-planete.fr/kratos/
+      - SELF_SERVICE_BROWSER_DEFAULT_RETURN_URL=https://auth.vite-ma-planete.fr/
+      - SELF_SERVICE_ALLOWED_RETURN_URLS=https://auth.vite-ma-planete.fr/
+      - SELF_SERVICE_FLOW_ERROR_UI_URL=https://auth.vite-ma-planete.fr/error
+      - SELF_SERVICE_FLOW_SETTINGS_UI_URL=https://auth.vite-ma-planete.fr/settings
+      - SELF_SERVICE_FLOW_RECOVERY_UI_URL=https://auth.vite-ma-planete.fr/recovery
+      - SELF_SERVICE_FLOW_VERIFICATION_UI_URL=https://auth.vite-ma-planete.fr/verification
+      - SELF_SERVICE_FLOW_VERIFICATION_AFTER_BROWSER_DEFAULT_RETURN_URL=https://auth.vite-ma-planete.fr/
+      - SELF_SERVICE_FLOW_LOGOUT_AFTER_BROWSER_DEFAULT_RETURN_URL=https://auth.vite-ma-planete.fr/
+      - SELF_SERVICE_FLOW_LOGIN_UI_URL=https://auth.vite-ma-planete.fr/login
+      - SELF_SERVICE_FLOW_REGISTRATION_UI_URL=https://auth.vite-ma-planete.fr/registration
+      - SECRETS_COOKIE=${COOKIE_SECRET}
+      - SECRETS_CIPHER=${CIPHER_SECRET}
+      - COOKIES_DOMAIN=.vite-ma-planete.fr
+
+  # acl and rbac management
+  keto:
+    container_name: prod-keto
+    environment:
+      - DSN=${DATABASE_URL}
+
+  # mailing
+  mailslurper:
+    image: oryd/mailslurper:latest-smtps
+    restart: unless-stopped
+    ports:
+      - 4437:4437 # api port cannot be changed :(
+
+  # api app
+  api:
+    image: vitemaplanete/api:0.1.5
+    container_name: prod-api
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - OPEN_AI_URL=${OPEN_AI_URL}
+
+  # www app
+  www:
+    image: vitemaplanete/www:0.1.5
+    container_name: prod-www
+    restart: unless-stopped
