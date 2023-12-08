@@ -1,10 +1,7 @@
 'use client';
 import React from 'react';
-import { ThemeProvider } from '@mui/material';
-
-import './global.css';
-import '@carbon/styles/css/styles.css';
-import '@carbon/charts/styles.css';
+import Header from 'packages/ui/src/lib/Header';
+import { Box, ThemeProvider } from '@mui/material';
 import lightTheme from '../../lib/theme.light';
 
 export default function LocaleLayout({
@@ -15,15 +12,9 @@ export default function LocaleLayout({
   params: { locale: string };
 }>) {
   return (
-    <html lang={locale}>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite ma planete - {locale}</title>
-      </head>
-      <body>
-        <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider theme={lightTheme}>
+      <Header />
+      <Box sx={{ backgroundColor: 'background.default' }}>{children}</Box>
+    </ThemeProvider>
   );
 }

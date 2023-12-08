@@ -23,6 +23,7 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
+    "**/*.woff2",
     "../../apps/www/.next/types/**/*.ts",
     "../../dist/apps/www/.next/types/**/*.ts",
     "next-env.d.ts"
