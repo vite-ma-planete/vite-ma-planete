@@ -98,5 +98,30 @@
         }
       }
     }
+  },
+  "350.org": {
+    "name": "350.org",
+    "description": "350 s’appuie sur des campagnes en ligne, des initiatives locales et des actions de masse pour s’opposer aux nouveaux projets charbonniers, pétroliers et gaziers, priver les sociétés qui contribuent au réchauffement de la planète de leurs ressources financières et développer des solutions d’énergie totalement propre qui profitent à tous.",
+    "link": "https://350.org/"
+  },
+  "act_for_the_environment": {
+    "name": "Agir pour l'Environnement",
+    "description": "Agir pour l’environnement initie des campagnes de mobilisation citoyenne avec des associations de protection de l’environnement et de consommateurs, des organismes professionnels et des syndicats, sur des sujets d’actualité (agriculture durable, transport, énergie, protection de la biodiversité, santé et environnement) et met en commun des expertises et des propositions.",
+    "link": "https://www.agirpourlenvironnement.org/"
+  },
+  "alternatiba": {
+    "name": "Alternatiba",
+    "description": "Alternatiba est un mouvement citoyen qui vise à promouvoir les alternatives locales à la crise climatique, notamment par l'organisation de villages des alternatives en France et au-delà : des événements festifs et populaires qui mettent en valeur ce qu’on peut faire à différentes échelles pour relever ce défi majeur du 21e siècle ! Alternatiba montre que non seulement les solutions au dérèglement climatique existent mais qu’en plus, elles sont à notre portée et construisent une société plus soutenable, plus juste, plus solidaire, et plus conviviale.",
+    "link": "https://alternatiba.eu/"
+  },
+  "french_federation_of_bicycle_users": {
+    "name": "Fédération française des usagers de la bicyclette",
+    "description": "La FUB, qui regroupe les associations françaises de cyclistes urbains, encourage l’utilisation de la bicyclette comme moyen de déplacement quotidien (ressources documentaires, journées d’étude,...) en milieu urbain en complémentarité avec les transports collectifs.",
+    "link": "https://www.fub.fr/"
+  },
+  "student_network_for_an_ecological_and_solidarity_society": {
+    "name": "Réseau étudiant pour une société écologique et solidaire",
+    "description": "Depuis 2007, le RESES est un réseau national composé de 150 associations étudiantes qui mènent des projets liés aux enjeux socio-environnementaux tels que l’alimentation, la biodiversité, le climat, les déchets, etc. Nous défendons une vision de l’écologie ambitieuse qui prend en compte les questions de solidarité et d’équité sociale.",
+    "link": "https://le-reses.org/"
   }
 }
