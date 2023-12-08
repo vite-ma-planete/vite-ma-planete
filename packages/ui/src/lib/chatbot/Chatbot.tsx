@@ -26,7 +26,7 @@ export default function Chatbot() {
 
     const openai = new OpenAI({
       apiKey: 'NOT_A_REAL_KEY',
-      baseURL: 'http://localhost:3100/ai',
+      baseURL: 'https://api.vite-ma-planete.fr/ai',
       dangerouslyAllowBrowser: true,
     });
 
@@ -48,7 +48,7 @@ export default function Chatbot() {
   const onSubmit = async () => {
     const openai = new OpenAI({
       apiKey: 'NOT_A_REAL_KEY',
-      baseURL: 'http://localhost:3100/ai',
+      baseURL: 'https://api.vite-ma-planete.fr/ai',
       dangerouslyAllowBrowser: true,
     });
 
