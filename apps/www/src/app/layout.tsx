@@ -1,10 +1,15 @@
+'use client';
 import React from 'react';
 import localFont from 'next/font/local';
 
 import './global.css';
 import '@carbon/styles/css/styles.css';
 import '@carbon/charts/styles.css';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { ThemeProvider } from '@emotion/react';
+import lightTheme from '../lib/theme.light';
+import { Box } from '@mui/material';
+import { TranslationProvider } from 'packages/i18n/src/lib/i18n';
+import Header from 'packages/ui/src/lib/Header';
 
 const marianne = localFont({
   src: [
@@ -33,19 +38,20 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = useMessages();
-
   return (
     <html lang={locale}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite ma planete - {locale}</title>
+        <title>Vite ma planete</title>
       </head>
       <body className={marianne.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <TranslationProvider>
+          <ThemeProvider theme={lightTheme}>
+            <Header />
+            <Box sx={{ backgroundColor: 'background.default' }}>{children}</Box>
+          </ThemeProvider>
+        </TranslationProvider>
       </body>
     </html>
   );

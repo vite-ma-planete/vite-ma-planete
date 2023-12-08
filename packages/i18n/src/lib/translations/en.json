@@ -4,5 +4,7 @@
   "charts": "Charts",
   "quiz": "Quiz",
   "associations": "Associations",
-  "language": "Language"
+  "language": "Language",
+  "english": "English",
+  "french": "French"
 }
