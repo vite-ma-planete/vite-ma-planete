@@ -40,7 +40,6 @@ resource "helm_release" "cluster_issuers_release" {
   ]
 }
 
-
 resource "helm_release" "oathkeeper_config_release" {
   name      = "oathkeeper-config"
   namespace = "vite-ma-planete"
@@ -51,4 +50,16 @@ resource "helm_release" "oathkeeper_config_release" {
     name  = "rules.api.notes"
     value = file("../../config/oathkeeper/rules/auth.yaml")
   }
+}
+
+resource "helm_release" "consul_release" {
+  name      = "consul"
+  namespace = kubernetes_namespace.consul_namespace.metadata[0].name
+
+  chart      = "charts/consul"
+  repository = "https://github.com/hashicorp/consul-k8s.git"
+
+  depends_on = [
+    kubernetes_namespace.consul_namespace
+  ]
 }

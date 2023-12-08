@@ -22,8 +22,14 @@ resource "kubernetes_namespace" "sealed_secrets_namespace" {
   }
 }
 
-# resource "kubernetes_namespace" "vite_ma_planete_namespace" {
-#   metadata {
-#     name = "vite-ma-planete"
-#   }
-# }
+resource "kubernetes_namespace" "consul_namespace" {
+  metadata {
+    name = "consul"
+  }
+}
+
+resource "kubernetes_namespace" "vite_ma_planete_namespace" {
+  metadata {
+    name = "vite-ma-planete"
+  }
+}
