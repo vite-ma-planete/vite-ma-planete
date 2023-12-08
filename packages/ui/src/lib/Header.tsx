@@ -57,7 +57,7 @@ export default function Header() {
               <HeaderLink
                 href={`/${locale}`}
                 text={i18n.t('home')}
-                selected={pathname === '/'}
+                selected={pathname === ''}
               />
               <HeaderLink
                 href={`/${locale}/questions`}
