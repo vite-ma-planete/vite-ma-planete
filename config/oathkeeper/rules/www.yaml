@@ -1,0 +1,17 @@
+#######################################
+#         Auth Access Rules           #
+#######################################
+- id: "www:anonymous"
+  upstream:
+    preserve_host: true
+    url: "http://www:3000"
+  match:
+    url: http://vite-ma-planete.<127\.0\.0\.1\.sslip\.io|fr>/<.*>
+    methods:
+      - GET
+  authenticators:
+    - handler: anonymous
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: noop

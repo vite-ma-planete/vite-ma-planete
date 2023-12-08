@@ -18,6 +18,7 @@ services:
       - ./config/oathkeeper/rules/auth.yaml:/etc/config/oathkeeper/rules/auth.yaml
       - ./config/oathkeeper/rules/kratos.yaml:/etc/config/oathkeeper/rules/kratos.yaml
       - ./config/oathkeeper/rules/api-notes.yaml:/etc/config/oathkeeper/rules/api-notes.yaml
+      - ./config/oathkeeper/rules/www.yaml:/etc/config/oathkeeper/rules/www.yaml
     depends_on:
       - kratos
 
