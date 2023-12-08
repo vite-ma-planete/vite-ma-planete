@@ -21,7 +21,6 @@
       "@vite-ma-planete/database": ["packages/database/src/index.ts"],
       "@vite-ma-planete/error": ["packages/error/src/index.ts"],
       "@vite-ma-planete/i18n": ["packages/i18n/src/index.ts"],
-      "@vite-ma-planete/notes": ["packages/notes/src/index.ts"],
       "@vite-ma-planete/opentelemetry": ["packages/opentelemetry/src/index.ts"],
       "@vite-ma-planete/types": ["packages/types/src/index.ts"],
       "@vite-ma-planete/ui": ["packages/ui/src/index.ts"],
