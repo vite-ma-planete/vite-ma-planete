@@ -74,6 +74,11 @@ export default function Header() {
                 text={i18n.t('associations')}
                 selected={pathname === '/associations'}
               />
+              <HeaderLink
+                href="/chatbot"
+                text={i18n.t('chatbot')}
+                selected={pathname === '/chatbot'}
+              />
             </Stack>
           </Stack>
           <FormControl variant="standard" sx={{ m: 1 }}>
