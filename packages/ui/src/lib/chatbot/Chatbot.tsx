@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { ChatCompletionChunk } from 'openai/resources';
 import OpenAI from 'openai';
 import { Button, Stack, TextField, Typography } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import ChatbotMessage from './ChatbotMessage';
 import { useTranslation } from '@vite-ma-planete/i18n';
@@ -14,11 +15,14 @@ export default function Chatbot() {
   const { i18n } = useTranslation();
   const debouncedPrompt = useDebounce(prompt, 500);
   const [suggestion, setSuggestion] = useState<string>('');
+  const [loadingSuggestions, setLoadingSuggestions] = useState<boolean>(false);
 
   useEffect(() => {
     if (debouncedPrompt.length < 3) {
       return;
     }
+
+    setLoadingSuggestions(true);
 
     const openai = new OpenAI({
       apiKey: 'NOT_A_REAL_KEY',
@@ -37,6 +41,10 @@ export default function Chatbot() {
       });
   }, [debouncedPrompt]);
 
+  useEffect(() => {
+    setLoadingSuggestions(false);
+  }, [suggestion]);
+
   const onSubmit = async () => {
     const openai = new OpenAI({
       apiKey: 'NOT_A_REAL_KEY',
@@ -53,12 +61,32 @@ export default function Chatbot() {
     for await (const data of res) {
       streamCallback(data);
     }
-
-    console.log('ended');
   };
 
   const streamCallback = (chunk: ChatCompletionChunk) => {
-    setMessages((messages) => [...messages, chunk]);
+    if (!chunk) return;
+    setMessages((messages) => {
+      const lastMessage = messages[messages.length - 1];
+      const oldMessages = messages.slice(0, messages.length - 1);
+
+      const lastContent = lastMessage?.choices[0].delta.content ?? '';
+      const newContent = chunk.choices[0].delta.content ?? '';
+
+      const newMessage = {
+        ...chunk,
+        choices: [
+          {
+            ...chunk.choices[0],
+            delta: {
+              ...chunk.choices[0].delta,
+              content: lastContent + newContent,
+            },
+          },
+        ],
+      };
+
+      return [...oldMessages, newMessage];
+    });
   };
 
   return (
@@ -76,21 +104,30 @@ export default function Chatbot() {
           />
         ))}
       </Stack>
-      <TextField
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        placeholder={i18n.t('chatbotPlaceholder')}
-        multiline
-        sx={{ backgroundColor: 'background.paper' }}
-      />
-      <Button
-        onClick={onSubmit}
-        variant="contained"
-        endIcon={<SendRoundedIcon />}
-      >
-        {i18n.t('chatbotSend')}
-      </Button>
-      {suggestion}
+      <Stack direction="column" spacing={2} alignItems="stretch">
+        <LoadingButton
+          loading={loadingSuggestions}
+          onClick={() => {
+            setPrompt(suggestion);
+          }}
+        >
+          {suggestion}
+        </LoadingButton>
+        <TextField
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder={i18n.t('chatbotPlaceholder')}
+          multiline
+          sx={{ backgroundColor: 'background.paper' }}
+        />
+        <Button
+          onClick={onSubmit}
+          variant="contained"
+          endIcon={<SendRoundedIcon />}
+        >
+          {i18n.t('chatbotSend')}
+        </Button>
+      </Stack>
     </Stack>
   );
 }
