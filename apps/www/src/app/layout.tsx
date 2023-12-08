@@ -48,8 +48,25 @@ export default function LocaleLayout({
       <body className={marianne.className}>
         <TranslationProvider>
           <ThemeProvider theme={lightTheme}>
-            <Header />
-            <Box sx={{ backgroundColor: 'background.default' }}>{children}</Box>
+            <Box
+              sx={{
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Header />
+              <Box
+                sx={{
+                  backgroundColor: 'background.default',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flexGrow: 1,
+                }}
+              >
+                {children}
+              </Box>
+            </Box>
           </ThemeProvider>
         </TranslationProvider>
       </body>

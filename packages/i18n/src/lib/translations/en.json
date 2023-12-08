@@ -1,5 +1,6 @@
 {
   "title": "Hurry-up my planet",
+  "description": "Hurry-up my planet is a serious game that aims to raise awareness about climate change and its solutions. It is based on the 5 themes of the IPCC (Intergovernmental Panel on Climate Change) and the 17 Sustainable Development Goals (SDGs) of the United Nations.",
   "home": "Home",
   "charts": "Charts",
   "questions": "Questions",
@@ -125,5 +126,8 @@
       "description": "Since 2007, RESES has been a national network composed of 150 student associations that carry out projects related to socio-environmental issues such as food, biodiversity, climate, waste, etc. We advocate for an ambitious ecology vision that takes into account questions of social solidarity and equity.",
       "link": "https://le-reses.org/"
     }
-  }
+  },
+  "chatbot": "Chatbot",
+  "chatbotPlaceholder": "Type your message here...",
+  "chatbotSend": "Send"
 }

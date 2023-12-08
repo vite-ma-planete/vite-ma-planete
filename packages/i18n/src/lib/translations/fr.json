@@ -1,5 +1,6 @@
 {
   "title": "Vite ma planète",
+  "description": "Vite ma planète est un chatbot qui répond à vos questions sur le changement climatique et vous aide à trouver des actions concrètes pour lutter contre le changement climatique.",
   "home": "Accueil",
   "charts": "Graphiques",
   "questions": "Questions",
@@ -123,5 +124,8 @@
     "name": "Réseau étudiant pour une société écologique et solidaire",
     "description": "Depuis 2007, le RESES est un réseau national composé de 150 associations étudiantes qui mènent des projets liés aux enjeux socio-environnementaux tels que l’alimentation, la biodiversité, le climat, les déchets, etc. Nous défendons une vision de l’écologie ambitieuse qui prend en compte les questions de solidarité et d’équité sociale.",
     "link": "https://le-reses.org/"
-  }
+  },
+  "chatbot": "Chatbot",
+  "chatbotPlaceholder": "Posez votre question ici",
+  "chatbotSend": "Envoyer"
 }

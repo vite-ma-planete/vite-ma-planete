@@ -16,6 +16,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
+      "@vite-ma-planete/ai": ["packages/ai/src/index.ts"],
       "@vite-ma-planete/auth": ["packages/auth/src/index.ts"],
       "@vite-ma-planete/config": ["packages/config/src/index.ts"],
       "@vite-ma-planete/database": ["packages/database/src/index.ts"],

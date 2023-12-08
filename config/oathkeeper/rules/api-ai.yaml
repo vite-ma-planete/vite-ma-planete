@@ -1,0 +1,34 @@
+#######################################
+#            AI Access Rules          #
+#######################################
+- id: "api:create-chat-completions:protected"
+  upstream:
+    preserve_host: true
+    url: "http://api:3100"
+  match:
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/ai/chat/completions
+    methods:
+      - POST
+  authenticators:
+    - handler: anonymous
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: noop
+
+- id: "api:create-completions:protected"
+  upstream:
+    preserve_host: true
+    url: "http://api:3100"
+  match:
+    url: http://api.vite-ma-planete.<127\.0\.0\.1\.sslip\.io|com>/ai/completions
+    methods:
+      - POST
+  authenticators:
+    - handler: cookie_session
+  authorizer:
+    handler: allow
+  mutators:
+    - handler: id_token
+  errors:
+    - handler: redirect

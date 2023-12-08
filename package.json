@@ -30,6 +30,7 @@
     "@fastify/helmet": "^11.1.1",
     "@fastify/static": "^6.12.0",
     "@mui/icons-material": "^5.14.19",
+    "@mui/lab": "5.0.0-alpha.155",
     "@mui/material": "^5.14.20",
     "@nestjs/common": "^10.2.10",
     "@nestjs/config": "^3.1.1",
@@ -65,6 +66,8 @@
     "nestjs-otel": "^5.1.5",
     "nestjs-pino": "^3.5.0",
     "next": "14.0.3",
+    "next-intl": "^3.3.1",
+    "openai": "^4.20.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "pino-http": "^8.5.1",
@@ -76,7 +79,8 @@
     "rimraf": "^5.0.5",
     "rxjs": "^7.8.1",
     "sharp": "^0.32.6",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",

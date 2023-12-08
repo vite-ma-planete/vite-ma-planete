@@ -57,12 +57,7 @@ export default function Header() {
               <HeaderLink
                 href={`/${locale}`}
                 text={i18n.t('home')}
-                selected={pathname === '/'}
-              />
-              <HeaderLink
-                href={`/${locale}/charts`}
-                text={i18n.t('charts')}
-                selected={pathname === '/charts'}
+                selected={pathname === ''}
               />
               <HeaderLink
                 href={`/${locale}/questions`}
@@ -73,6 +68,11 @@ export default function Header() {
                 href={`/${locale}/associations`}
                 text={i18n.t('associations')}
                 selected={pathname === '/associations'}
+              />
+              <HeaderLink
+                href={`/${locale}/chatbot`}
+                text={i18n.t('chatbot')}
+                selected={pathname === '/chatbot'}
               />
             </Stack>
           </Stack>
