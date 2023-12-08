@@ -57,22 +57,22 @@ export default function Header() {
               <HeaderLink
                 href="/"
                 text={i18n.t('home')}
-                selected={pathname === ''}
+                selected={pathname === '/'}
               />
               <HeaderLink
                 href="/charts"
                 text={i18n.t('charts')}
-                selected={pathname === 'charts'}
+                selected={pathname === '/charts'}
               />
               <HeaderLink
                 href="/quiz"
                 text={i18n.t('quiz')}
-                selected={pathname === 'quiz'}
+                selected={pathname === '/quiz'}
               />
               <HeaderLink
                 href="/associations"
                 text={i18n.t('associations')}
-                selected={pathname === 'associations'}
+                selected={pathname === '/associations'}
               />
             </Stack>
           </Stack>

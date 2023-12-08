@@ -1,10 +1,10 @@
 'use client';
 import I18n from 'i18n-js';
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import * as EnTranslation from './translations/en.json';
 import * as FrTranslation from './translations/fr.json';
-import { useParams, usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const DEFAULT_LOCALE_CODE = 'en';
 
@@ -50,24 +50,19 @@ export function TranslationProvider({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter();
-  const { locale } = useParams();
   const pathname = usePathname();
-  const realPathname = useMemo(
-    () => pathname.replace(`/${locale}`, ''),
-    [locale, pathname]
-  );
+  const [locale, setLocale] = useState<string>(DEFAULT_LOCALE_CODE);
 
   if (Array.isArray(locale)) {
     throw new Error('locale should not be an array');
   }
 
-  const setLocale = useCallback(
+  const changeLocale = useCallback(
     (newLocale: string) => {
       saveToLocalStorage(newLocale);
-      router.push(`/${newLocale}${realPathname}`);
+      setLocale(newLocale);
     },
-    [realPathname, router]
+    [setLocale]
   );
 
   const i18n = useMemo(() => {
@@ -78,8 +73,8 @@ export function TranslationProvider({
   }, [locale]);
 
   const context = useMemo(
-    () => ({ locale, setLocale, i18n, pathname: realPathname }),
-    [i18n, locale, setLocale, realPathname]
+    () => ({ locale, setLocale: changeLocale, i18n, pathname }),
+    [i18n, locale, changeLocale, pathname]
   );
 
   // load locale from user preferences or local storage
