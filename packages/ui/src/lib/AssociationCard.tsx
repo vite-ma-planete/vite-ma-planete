@@ -11,6 +11,7 @@ type AssociationCardProps = {
   description: string;
   url: string;
   link: string;
+  visit_website: string;
 };
 
 export default function AssociationsCard(props: AssociationCardProps) {
@@ -40,7 +41,7 @@ export default function AssociationsCard(props: AssociationCardProps) {
             window.location.href = props.link;
           }}
         >
-          Visit website
+          {props.visit_website}
         </Button>
       </CardActions>
     </Card>

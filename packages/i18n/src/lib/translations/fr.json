@@ -127,5 +127,6 @@
   },
   "chatbot": "Chatbot",
   "chatbotPlaceholder": "Posez votre question ici",
-  "chatbotSend": "Envoyer"
+  "chatbotSend": "Envoyer",
+  "visit_website": "Visiter le site web"
 }

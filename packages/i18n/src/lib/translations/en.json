@@ -101,7 +101,7 @@
     }
   },
   "associationsList": {
-    "350.org": {
+    "350": {
       "name": "350.org",
       "description": "350.org relies on online campaigns, local initiatives, and mass actions to oppose new coal, oil, and gas projects, divest companies contributing to global warming of their financial resources, and develop completely clean energy solutions that benefit everyone.",
       "link": "https://350.org/"
@@ -129,5 +129,6 @@
   },
   "chatbot": "Chatbot",
   "chatbotPlaceholder": "Type your message here...",
-  "chatbotSend": "Send"
+  "chatbotSend": "Send",
+  "visit_website": "Visit website"
 }
