@@ -215,3 +215,10 @@ TAGS
 
 # nx
 .nx
+
+# terraform
+.terraform
+terraform.tfvars
+.vscode/
+*.tfstate
+*.tfstate.*
