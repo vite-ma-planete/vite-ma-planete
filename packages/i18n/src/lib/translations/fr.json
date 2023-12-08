@@ -2,9 +2,101 @@
   "title": "Vite ma planète",
   "home": "Accueil",
   "charts": "Graphiques",
-  "quiz": "Quiz",
+  "questions": "Questions",
   "associations": "Associations",
   "language": "Langue",
   "english": "Anglais",
-  "french": "Français"
+  "french": "Français",
+  "themes": {
+    "1": {
+      "theme": "Science du changement climatique",
+      "questions": {
+        "1": {
+          "question": "Question 1: Quels sont les principaux gaz à effet de serre et comment contribuent-ils au changement climatique ?",
+          "answer": "Les principaux gaz à effet de serre comprennent le dioxyde de carbone (CO2), le méthane (CH4), l'oxyde nitreux (N2O), et les fluorocarbures. Le CO2 est le plus émis par la combustion de carburants fossiles et la déforestation, tandis que le CH4 résulte principalement de la décomposition anaérobie dans les rizières et de l'élevage de ruminants. L'oxyde nitreux provient de l'usage d'engrais azotés en agriculture. Ces gaz piègent la chaleur dans l'atmosphère, ce qui entraîne le réchauffement de la planète."
+        },
+        "2": {
+          "question": "Question 2: Comment les activités humaines impactent-elles le changement climatique ?",
+          "answer": "Les activités humaines, comme la combustion de carburants fossiles pour l'énergie, la déforestation pour l'agriculture et l'urbanisation, ainsi que l'agriculture intensive, augmentent les concentrations de gaz à effet de serre dans l'atmosphère. De plus, l'industrialisation et la consommation de masse augmentent l'empreinte carbone globale, accélérant le changement climatique."
+        },
+        "3": {
+          "question": "Idée reçue: Planter des arbres est la solution unique et la plus efficace pour lutter contre le changement climatique.",
+          "answer": "Bien que la plantation d'arbres soit bénéfique, car les arbres absorbent le dioxyde de carbone lors de la photosynthèse, ce n'est pas une solution miracle. Le changement climatique est un problème complexe qui nécessite une approche multidimensionnelle. Cela inclut la réduction des émissions à la source, comme la transition vers des énergies renouvelables, l'amélioration de l'efficacité énergétique, le changement des pratiques agricoles et industrielles, et la modification des comportements de consommation. La reforestation est un outil important dans l'arsenal des stratégies de lutte contre le changement climatique, mais elle doit être accompagnée d'autres mesures pour être véritablement efficace.",
+          "isIdea": true
+        }
+      }
+    },
+    "2": {
+      "theme": "Transports et Mobilité Durable",
+      "questions": {
+        "1": {
+          "question": "Question 1: Quel impact les transports ont-ils sur le changement climatique et comment peut-on réduire cet impact ?",
+          "answer": "Les transports sont l'un des principaux secteurs émetteurs de gaz à effet de serre, en grande partie à cause de l'utilisation des carburants fossiles. Pour réduire cet impact, on peut promouvoir la mobilité durable en favorisant l'usage des transports en commun, le covoiturage, les véhicules électriques, les déplacements à vélo ou à pied, et en améliorant l'efficacité énergétique des véhicules."
+        },
+        "2": {
+          "question": "Question 2: Quels sont les défis associés à la transition vers des modes de transport plus écologiques ?",
+          "answer": "Les défis comprennent l'investissement dans les infrastructures nécessaires, comme les stations de recharge pour véhicules électriques, la résistance au changement des habitudes de transport individuel, et la nécessité de rendre les options de transport durable accessibles et pratiques pour tous."
+        },
+        "3": {
+          "question": "Idée reçue: Les véhicules électriques sont tout aussi polluants que les voitures à essence en raison de l'énergie utilisée pour les produire et les recharger.",
+          "answer": "Bien que la production de véhicules électriques et la génération d'électricité nécessaire pour les recharger puissent actuellement impliquer des émissions de gaz à effet de serre, leur impact global sur le climat est généralement inférieur à celui des voitures à essence sur leur durée de vie complète. De plus, avec l'augmentation des énergies renouvelables dans le mix énergétique, l'empreinte carbone des véhicules électriques continue de diminuer.",
+          "isIdea": true
+        }
+      }
+    },
+    "3": {
+      "theme": "Énergies Renouvelables",
+      "questions": {
+        "1": {
+          "question": "Question 1: Comment les énergies renouvelables contribuent-elles à la lutte contre le changement climatique ?",
+          "answer": "Les énergies renouvelables, telles que l'énergie solaire, éolienne, hydroélectrique et géothermique, n'émettent pas de gaz à effet de serre lors de leur production d'énergie. Leur adoption réduit donc notre dépendance aux combustibles fossiles et diminue notre empreinte carbone."
+        },
+        "2": {
+          "question": "Question 2: Quels sont les obstacles au déploiement des énergies renouvelables à grande échelle ?",
+          "answer": "Les obstacles incluent le coût initial de l'installation, la variabilité de la production d'énergie due aux conditions météorologiques, les défis de stockage de l'énergie, et la nécessité d'adapter les réseaux électriques existants pour intégrer ces sources d'énergie intermittentes."
+        },
+        "3": {
+          "question": "Idée reçue: Les énergies renouvelables ne sont pas assez puissantes pour répondre aux besoins énergétiques mondiaux.",
+          "answer": "Les technologies d'énergies renouvelables se développent rapidement et sont déjà capables de fournir une part substantielle de l'énergie nécessaire à l'échelle mondiale. Des pays entiers, comme l'Islande et le Costa Rica, fonctionnent déjà majoritairement à partir d'énergies renouvelables, prouvant que ces sources d'énergie peuvent répondre à des besoins élevés.",
+          "isIdea": true
+        }
+      }
+    },
+    "4": {
+      "theme": "Actions Quotidiennes et Consommation Responsable",
+      "questions": {
+        "1": {
+          "question": "Question 1: Quelles actions quotidiennes simples peuvent contribuer à la réduction de notre impact sur le climat ?",
+          "answer": "Des actions simples telles que réduire la consommation d'eau et d'énergie, privilégier les produits locaux et de saison, réduire la consommation de viande, recycler et réutiliser, et diminuer les déchets peuvent toutes contribuer significativement à réduire notre impact environnemental."
+        },
+        "2": {
+          "question": "Question 2: Comment la consommation responsable peut-elle influencer positivement la lutte contre le changement climatique ?",
+          "answer": "La consommation responsable peut réduire la demande pour des produits à forte empreinte carbone et encourager les entreprises à adopter des pratiques plus durables. Cela peut aussi pousser à l'innovation dans la création de produits éco-conçus et à un changement général des comportements de consommation vers plus de durabilité."
+        },
+        "3": {
+          "question": "Idée reçue: Les petits gestes individuels n'ont pas d'impact réel sur le changement climatique.",
+          "answer": "Chaque action compte. Lorsqu'elles sont adoptées par un grand nombre de personnes, les actions quotidiennes telles que réduire la consommation d'eau, privilégier les produits locaux, et recycler peuvent avoir un effet cumulatif significatif. De plus, ces actions peuvent influencer les normes sociales et inciter les entreprises et les politiciens à mettre en œuvre des politiques plus durables.",
+          "isIdea": true
+        }
+      }
+    },
+    "5": {
+      "theme": "Éducation et Sensibilisation",
+      "questions": {
+        "1": {
+          "question": "Question 1: Pourquoi l'éducation et la sensibilisation sont-elles cruciales dans la lutte contre le changement climatique ?",
+          "answer": "L'éducation et la sensibilisation sont cruciales car elles permettent de mieux comprendre les enjeux, d'informer sur les conséquences du changement climatique et sur les moyens d'action disponibles. Elles mobilisent l'opinion publique et encouragent les comportements responsables et les choix éclairés."
+        },
+        "2": {
+          "question": "Question 2: Quels sont les meilleurs moyens de sensibiliser les individus et les communautés au changement climatique ?",
+          "answer": "Les meilleurs moyens incluent les campagnes d'information, les programmes éducatifs dans les écoles, les ateliers communautaires, l'art et les médias qui transmettent des messages clairs et motivants. La participation à des initiatives locales et l'engagement dans des actions concrètes peuvent également renforcer la prise de conscience et l'action collective."
+        },
+        "3": {
+          "question": "Idée reçue: Seuls les experts et les scientifiques peuvent réellement comprendre et agir contre le changement climatique.",
+          "answer": "Bien que les experts et les scientifiques jouent un rôle crucial dans la compréhension et la lutte contre le changement climatique, il est essentiel que tout le monde soit informé et impliqué. L'éducation et la sensibilisation à tous les niveaux permettent de démocratiser l'information sur le climat et d'encourager une action collective et individuelle. Lorsque les individus sont bien informés, ils peuvent prendre des décisions éclairées qui contribuent à la protection de l'environnement.",
+          "isIdea": true
+        }
+      }
+    }
+  }
 }

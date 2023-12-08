@@ -65,9 +65,9 @@ export default function Header() {
                 selected={pathname === '/charts'}
               />
               <HeaderLink
-                href="/quiz"
-                text={i18n.t('quiz')}
-                selected={pathname === '/quiz'}
+                href="/questions"
+                text={i18n.t('questions')}
+                selected={pathname === 'questions'}
               />
               <HeaderLink
                 href="/associations"

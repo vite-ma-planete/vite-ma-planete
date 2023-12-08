@@ -2,9 +2,101 @@
   "title": "Hurry-up my planet",
   "home": "Home",
   "charts": "Charts",
-  "quiz": "Quiz",
+  "questions": "Questions",
   "associations": "Associations",
   "language": "Language",
   "english": "English",
-  "french": "French"
+  "french": "French",
+  "themes": {
+    "1": {
+      "theme": "Climate Change Science",
+      "questions": {
+        "1": {
+          "question": "Question 1: What are the main greenhouse gases, and how do they contribute to climate change?",
+          "answer": "The main greenhouse gases include carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and fluorocarbons. CO2 is primarily emitted from fossil fuel combustion and deforestation, while CH4 results mainly from anaerobic decomposition in rice paddies and ruminant livestock. Nitrous oxide comes from the use of nitrogen-based fertilizers in agriculture. These gases trap heat in the atmosphere, leading to global warming."
+        },
+        "2": {
+          "question": "Question 2: How do human activities impact climate change?",
+          "answer": "Human activities, such as fossil fuel combustion for energy, deforestation for agriculture and urbanization, as well as intensive agriculture, increase greenhouse gas concentrations in the atmosphere. Additionally, industrialization and mass consumption increase the overall carbon footprint, accelerating climate change."
+        },
+        "3": {
+          "question": "Common Idea: Planting trees is the sole and most effective solution to combat climate change.",
+          "answer": "While tree planting is beneficial because trees absorb carbon dioxide during photosynthesis, it is not a miracle solution. Climate change is a complex issue that requires a multidimensional approach. This includes reducing emissions at the source, such as transitioning to renewable energy, improving energy efficiency, changing agricultural and industrial practices, and modifying consumption behaviors. Reforestation is an important tool in the arsenal of climate change mitigation strategies, but it must be accompanied by other measures to be truly effective.",
+          "isIdea": true
+        }
+      }
+    },
+    "2": {
+      "theme": "Transportation and Sustainable Mobility",
+      "questions": {
+        "1": {
+          "question": "Question 1: What impact do transportation have on climate change, and how can this impact be reduced?",
+          "answer": "Transportation is one of the major sectors emitting greenhouse gases, largely due to the use of fossil fuels. To reduce this impact, we can promote sustainable mobility by encouraging the use of public transportation, carpooling, electric vehicles, cycling, or walking, and by improving the energy efficiency of vehicles."
+        },
+        "2": {
+          "question": "Question 2: What are the challenges associated with transitioning to more eco-friendly modes of transportation?",
+          "answer": "Challenges include investment in necessary infrastructure, such as electric vehicle charging stations, resistance to individual transportation habits, and the need to make sustainable transportation options accessible and convenient for everyone."
+        },
+        "3": {
+          "question": "Common Idea: Electric vehicles are just as polluting as gasoline cars due to the energy used to produce and charge them.",
+          "answer": "While the production of electric vehicles and the generation of electricity needed to charge them may currently involve greenhouse gas emissions, their overall impact on the climate is generally lower than that of gasoline cars over their entire lifespan. Furthermore, with the increase in renewable energy sources in the energy mix, the carbon footprint of electric vehicles continues to decrease.",
+          "isIdea": true
+        }
+      }
+    },
+    "3": {
+      "theme": "Renewable Energy",
+      "questions": {
+        "1": {
+          "question": "Question 1: How do renewable energies contribute to the fight against climate change?",
+          "answer": "Renewable energies such as solar, wind, hydroelectric, and geothermal energy do not emit greenhouse gases during energy production. Their adoption reduces our dependence on fossil fuels and decreases our carbon footprint."
+        },
+        "2": {
+          "question": "Question 2: What are the obstacles to large-scale deployment of renewable energies?",
+          "answer": "Obstacles include the initial installation cost, variability in energy production due to weather conditions, energy storage challenges, and the need to adapt existing electrical grids to integrate these intermittent energy sources."
+        },
+        "3": {
+          "question": "Common Idea: Renewable energies are not powerful enough to meet global energy needs.",
+          "answer": "Renewable energy technologies are developing rapidly and are already capable of providing a substantial share of the world's energy needs. Entire countries, such as Iceland and Costa Rica, already operate predominantly on renewable energy, proving that these energy sources can meet high demands.",
+          "isIdea": true
+        }
+      }
+    },
+    "4": {
+      "theme": "Everyday Actions and Responsible Consumption",
+      "questions": {
+        "1": {
+          "question": "Question 1: What simple daily actions can contribute to reducing our impact on the climate?",
+          "answer": "Simple actions such as reducing water and energy consumption, preferring local and seasonal products, reducing meat consumption, recycling and reusing, and reducing waste can all significantly contribute to reducing our environmental impact."
+        },
+        "2": {
+          "question": "Question 2: How can responsible consumption positively influence the fight against climate change?",
+          "answer": "Responsible consumption can reduce demand for high-carbon footprint products and encourage companies to adopt more sustainable practices. It can also drive innovation in the creation of eco-designed products and promote a general shift in consumption behaviors towards greater sustainability."
+        },
+        "3": {
+          "question": "Common Idea: Individual small actions have no real impact on climate change.",
+          "answer": "Every action counts. When adopted by a large number of people, daily actions such as reducing water consumption, preferring local products, and recycling can have a significant cumulative effect. Additionally, these actions can influence social norms and encourage businesses and politicians to implement more sustainable policies.",
+          "isIdea": true
+        }
+      }
+    },
+    "5": {
+      "theme": "Education and Awareness",
+      "questions": {
+        "1": {
+          "question": "Question 1: Why are education and awareness crucial in the fight against climate change?",
+          "answer": "Education and awareness are crucial because they help better understand the issues, provide information on the consequences of climate change and available actions. They mobilize public opinion and encourage responsible behaviors and informed choices."
+        },
+        "2": {
+          "question": "Question 2: What are the best ways to raise awareness among individuals and communities about climate change?",
+          "answer": "The best methods include information campaigns, educational programs in schools, community workshops, art, and media that convey clear and motivating messages. Participation in local initiatives and engagement in concrete actions can also enhance awareness and collective action."
+        },
+        "3": {
+          "question": "Common Idea: Only experts and scientists can truly understand and act against climate change.",
+          "answer": "While experts and scientists play a crucial role in understanding and combating climate change, it is essential for everyone to be informed and involved. Education and awareness at all levels democratize climate information and encourage collective and individual action. When individuals are well-informed, they can make informed decisions that contribute to environmental protection.",
+          "isIdea": true
+        }
+      }
+    }
+  }
 }
