@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import {
+  Box,
   Container,
   FormControl,
   InputLabel,
@@ -13,15 +12,37 @@ import {
 } from '@mui/material';
 
 import logo from './images/logo.webp';
+import { useTranslation } from '@vite-ma-planete/i18n';
 
-function HeaderLink({ href, text }: { href: string; text: string }) {
-  return <Link href={href}>{text}</Link>;
+function HeaderLink({
+  href,
+  text,
+  selected,
+}: Readonly<{
+  href: string;
+  text: string;
+  selected?: boolean;
+}>) {
+  return (
+    <Link href={href} aria-selected={selected}>
+      <Box
+        sx={{
+          px: 2,
+          py: 3,
+          borderBottomColor: selected ? 'primary.main' : 'transparent',
+          borderBottomWidth: 4,
+          borderBottomStyle: 'solid',
+          color: 'text.primary',
+        }}
+      >
+        {text}
+      </Box>
+    </Link>
+  );
 }
 
 export default function Header() {
-  const router = useRouter();
-  const t = useTranslations();
-
+  const { i18n, locale, pathname, setLocale } = useTranslation();
   return (
     <header>
       <Container>
@@ -33,27 +54,40 @@ export default function Header() {
           <Stack direction="row" spacing={4} alignItems="center">
             <Image src={logo} alt="Logo" height={40} />
             <Stack direction="row" spacing={2} alignItems="center">
-              <HeaderLink href="/" text={t('home')} />
-              <HeaderLink href="/charts" text={t('charts')} />
-              <HeaderLink href="/quiz" text={t('quiz')} />
-              <HeaderLink href="/associations" text={t('associations')} />
+              <HeaderLink
+                href="/"
+                text={i18n.t('home')}
+                selected={pathname === ''}
+              />
+              <HeaderLink
+                href="/charts"
+                text={i18n.t('charts')}
+                selected={pathname === 'charts'}
+              />
+              <HeaderLink
+                href="/quiz"
+                text={i18n.t('quiz')}
+                selected={pathname === 'quiz'}
+              />
+              <HeaderLink
+                href="/associations"
+                text={i18n.t('associations')}
+                selected={pathname === 'associations'}
+              />
             </Stack>
           </Stack>
-          <FormControl>
-            <InputLabel id="langue-select">{t('language')}</InputLabel>
+          <FormControl variant="standard" sx={{ m: 1 }}>
+            <InputLabel id="langue-select">{i18n.t('language')}</InputLabel>
             <Select
               labelId="langue-select"
-              variant="standard"
-              value={router.locale}
+              value={locale}
               onChange={(event: SelectChangeEvent) => {
-                router.push(router.pathname, router.asPath, {
-                  locale: event.target.value,
-                });
+                setLocale(event.target.value);
               }}
               defaultValue="en"
             >
-              <MenuItem value="en">English</MenuItem>
-              <MenuItem value="fr">Français</MenuItem>
+              <MenuItem value="en">{i18n.t('english')}</MenuItem>
+              <MenuItem value="fr">{i18n.t('french')}</MenuItem>
             </Select>
           </FormControl>
         </Stack>

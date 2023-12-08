@@ -23,10 +23,10 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "**/*.woff2",
     "../../apps/www/.next/types/**/*.ts",
     "../../dist/apps/www/.next/types/**/*.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "../../packages/ui/src/lib/i18n.tsx"
   ],
   "exclude": [
     "node_modules",
