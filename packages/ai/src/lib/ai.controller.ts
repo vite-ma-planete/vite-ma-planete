@@ -44,8 +44,9 @@ export class AiController {
       status: 200,
     },
   })
-  @Sse()
-  createCompletions(@Body() body: CreateCompletionDto): Observable<Completion> {
+  async createCompletions(
+    @Body() body: CreateCompletionDto
+  ): Promise<Completion> {
     return this.aiService.createCompletions(body);
   }
 }

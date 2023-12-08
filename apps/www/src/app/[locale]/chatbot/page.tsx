@@ -1,17 +1,13 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { ChatCompletionChunk } from 'openai/resources';
-import OpenAI from 'openai';
-import { Button, Stack, TextField, Typography } from '@mui/material';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
-import ChatbotMessage from './ChatbotMessage';
-import { useTranslation } from '@vite-ma-planete/i18n';
 import { useDebounce } from 'usehooks-ts';
+import OpenAI from 'openai';
 
-export default function Chatbot() {
+export default function Index() {
   const [messages, setMessages] = useState<ChatCompletionChunk[]>([]);
   const [prompt, setPrompt] = useState<string>('');
-  const { i18n } = useTranslation();
   const debouncedPrompt = useDebounce(prompt, 500);
   const [suggestion, setSuggestion] = useState<string>('');
 
@@ -53,8 +49,6 @@ export default function Chatbot() {
     for await (const data of res) {
       streamCallback(data);
     }
-
-    console.log('ended');
   };
 
   const streamCallback = (chunk: ChatCompletionChunk) => {
@@ -62,35 +56,20 @@ export default function Chatbot() {
   };
 
   return (
-    <Stack
-      direction="column"
-      spacing={2}
-      sx={{ display: 'flex', flexGrow: 1, p: 2 }}
-    >
-      <Typography variant="h1">{i18n.t('chatbot')}</Typography>
-      <Stack direction="column" spacing={2} sx={{ flexGrow: 1 }}>
+    <div>
+      <h1>Chat</h1>
+      <div>
         {messages.map((message, i) => (
-          <ChatbotMessage
-            key={i}
-            message={message.choices[0].delta.content ?? ''}
-          />
+          <span key={i}>{message.choices[0].delta.content}</span>
         ))}
-      </Stack>
-      <TextField
+      </div>
+      <textarea
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
-        placeholder={i18n.t('chatbotPlaceholder')}
-        multiline
-        sx={{ backgroundColor: 'background.paper' }}
+        placeholder="Type here..."
       />
-      <Button
-        onClick={onSubmit}
-        variant="contained"
-        endIcon={<SendRoundedIcon />}
-      >
-        {i18n.t('chatbotSend')}
-      </Button>
-      {suggestion}
-    </Stack>
+      <button onClick={onSubmit}>Send</button>
+      <p>{suggestion}</p>
+    </div>
   );
 }

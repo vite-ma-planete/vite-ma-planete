@@ -18,6 +18,8 @@ const BASE_PROMPT = {
   role: 'system',
 } as ChatCompletionMessageParam;
 
+const BASE_PROMPT_COMPLETION = `You are going to help complete question of an user. You are not answering any questions, only completing the users questions. The questions are related to sustainability, ecology, environment, climate change, etc. Suggest in the language of the user. Here is the question you should help complete: `;
+
 @Injectable()
 export class AiService {
   constructor(private configService: ConfigService) {}
@@ -56,28 +58,17 @@ export class AiService {
     });
   }
 
-  createCompletions(dto: CreateCompletionDto): Observable<Completion> {
+  async createCompletions(dto: CreateCompletionDto): Promise<Completion> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    return new Observable((subscriber) => {
-      this.openAI.completions
-        .create({
-          model: dto.model,
-          prompt: dto.prompt,
-          stream: true,
-          max_tokens: 2000,
-        })
-        .then(async (res) => {
-          for await (const data of res) {
-            console.log('data', data);
-            subscriber.next(data);
-          }
-          subscriber.complete();
-        })
-        .catch((err): void => {
-          console.log('Error while streaming completion response:', err);
-          subscriber.error(err);
-        });
+    const res = await this.openAI.completions.create({
+      model: dto.model,
+      prompt: BASE_PROMPT_COMPLETION + dto.prompt,
+      stream: false,
+      max_tokens: 80,
+      stop: ['.', '?', '!'],
     });
+
+    return res;
   }
 }
